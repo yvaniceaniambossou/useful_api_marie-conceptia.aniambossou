@@ -11,7 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('user_modules', function (Blueprint $table) {
+
+            $table->foreign('user_id')->constrained('users');
+
+            $table->foreign('module_id')->constrained('modules');
+            
+            $table->boolean('active')->default(false);
+        });
     }
 
     /**

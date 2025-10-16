@@ -15,6 +15,16 @@ class ModulesController extends Controller
         //
     }
 
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string|max:255',
+            
+        ]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
@@ -23,4 +33,3 @@ class ModulesController extends Controller
         //
     }
 
- }

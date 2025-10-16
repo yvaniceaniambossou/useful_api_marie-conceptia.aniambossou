@@ -11,6 +11,7 @@ class Module extends Model
     use HasFactory, HasApiTokens;
 
    protected $fillable = [
+        'user_id',
         'id',
         'name',
         'description',
